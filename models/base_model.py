@@ -27,4 +27,5 @@ class BaseModel:
         rdict['created_at'] = self.created_at.isoformat()
         rdict['updated_at'] = self.updated_at.isoformat()
         rdict['__class__'] = self.__class__.__name__
+        rdict['id'] = str(self.id)
         return rdict
