@@ -3,6 +3,7 @@
 import uuid
 import datetime
 
+
 class BaseModel:
     """ The base model class"""
     def __init__(self):
@@ -13,7 +14,8 @@ class BaseModel:
 
     def __str__(self):
         """ to string """
-        return "[{}] ({}) {}".format(self.__class__.__name__, str(self.id), self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     str(self.id), self.__dict__)
 
     def save(self):
         """ updates updated_at value """
@@ -25,5 +27,4 @@ class BaseModel:
         rdict['created_at'] = self.created_at.isoformat()
         rdict['updated_at'] = self.updated_at.isoformat()
         rdict['__class__'] = self.__class__.__name__
-        
         return rdict
